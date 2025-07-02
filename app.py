@@ -19,6 +19,7 @@ def answer():
         takenoko_count += 1
 
     messages.append(request.form.get("message"))
+    messages=re.sub(r'(https?://)',r'<a href="\1">\1</a>',message)
     if len(messages) > 3:
         messages = messages[-3:]
     
